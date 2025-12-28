@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-"""
-Generate comprehensive experiment report
-"""
-
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
