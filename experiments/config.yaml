@@ -1,0 +1,201 @@
+# ============================================================================
+# Mutual Information Microarray Classification - Experiment Configuration
+# Based on paper: "Mutual Information-Based Feature Selection for Microarray Data Classification"
+# ============================================================================
+
+# Experiment Settings
+experiment:
+  name: "mutual_information_microarray_study"
+  version: "1.0"
+  author: "Maiza Mohammed"
+  date: "2024-01-15"
+  random_seed: 42
+  n_splits: 5                     # 5-fold cross-validation as per paper
+  test_size: 0.2                  # 80/20 train-test split
+  n_repeats: 3                    # Number of repetitions for statistical significance
+  output_dir: "results/"
+  
+# Feature Selection Settings
+feature_selection:
+  methods: ["jmi", "mim", "mrmr"]  # Methods to compare
+  feature_counts: [50, 100, 200, 500]  # Number of features to select
+  
+  # JMI (Joint Mutual Information) settings
+  jmi:
+    n_features_to_select: 100
+    implementation: "greedy_forward"
+    redundancy_weight: 0.5        # Weight for redundancy term (0-1)
+    
+  # MIM (Mutual Information Maximization) settings
+  mim:
+    n_features_to_select: 100
+    discretization_bins: 10       # For MI estimation
+    
+  # MRMR (Max-Relevance Min-Redundancy) settings
+  mrmr:
+    n_features_to_select: 100
+    method: "difference"          # "difference" or "quotient"
+
+# Classifier Settings
+classifiers:
+  enabled: ["nn", "xgb", "svm", "rf"]  # Classifiers to use
+  
+  # Neural Network (best performer from paper)
+  nn:
+    architecture: "mlp"
+    n_layers: 2                    # Paper: 1-3 layers (optimal: 2)
+    neurons_per_layer: 64          # Paper: 32-128 neurons (optimal: 64)
+    dropout_rate: 0.3              # Paper: 0.2-0.5 dropout
+    learning_rate: 0.001           # Paper: 0.001-0.01
+    batch_size: 16
+    epochs: 200
+    early_stopping_patience: 20
+    batch_normalization: True
+    weight_decay: 0.0001
+    
+  # XGBoost
+  xgb:
+    n_estimators: 300              # Paper: 100-300 trees
+    max_depth: 6                   # Paper: 3-10 depth
+    learning_rate: 0.05            # Paper: 0.01-0.3
+    subsample: 0.8
+    colsample_bytree: 0.8
+    reg_alpha: 0.1                 # L1 regularization
+    reg_lambda: 1.0                # L2 regularization
+    random_state: 42
+    
+  # Support Vector Machine
+  svm:
+    C: 1.0                         # Paper: 0.1-10
+    gamma: "scale"                 # "scale", "auto", or float
+    kernel: "rbf"                  # "rbf", "linear", "poly"
+    probability: True
+    random_state: 42
+    class_weight: "balanced"
+    
+  # Random Forest
+  rf:
+    n_estimators: 500              # Paper: 100-500 trees
+    max_depth: 20                  # Paper: 10-30 depth
+    min_samples_split: 2
+    min_samples_leaf: 1
+    max_features: "sqrt"
+    bootstrap: True
+    random_state: 42
+    class_weight: "balanced_subsample"
+
+# Dataset Settings
+datasets:
+  # List of datasets to process (from paper)
+  enabled: ["leukemia", "srbct", "colon", "prostate", "lung", "lymphoma", 
+            "dlbcl", "brain", "11tumors"]
+  
+  # Path configuration
+  data_dir: "../data/"
+  raw_dir: "../data/raw/"
+  processed_dir: "../data/processed/"
+  
+  # Dataset-specific settings
+  leukemia:
+    file_name: "leukemia.csv"
+    url: "https://web.stanford.edu/~hastie/CASI_files/DATA/leukemia.csv"
+    n_samples: 72
+    n_features: 7129
+    n_classes: 2
+    
+  srbct:
+    file_name: "srbct.csv"
+    url: "https://www.openml.org/data/download/1561975/"
+    n_samples: 83
+    n_features: 2308
+    n_classes: 4
+    
+  colon:
+    file_name: "colon.csv"
+    url: "https://jundongl.github.io/scikit-feature/datasets/colon.csv"
+    n_samples: 62
+    n_features: 2000
+    n_classes: 2
+    
+  prostate:
+    file_name: "prostate.csv"
+    url: "https://statweb.stanford.edu/~tibs/ElemStatLearn/datasets/prostate.csv"
+    n_samples: 102
+    n_features: 10509
+    n_classes: 2
+    
+  lung:
+    file_name: "lung.csv"
+    url: "https://jundongl.github.io/scikit-feature/datasets/lung.csv"
+    n_samples: 203
+    n_features: 12600
+    n_classes: 5
+    
+  lymphoma:
+    file_name: "lymphoma.csv"
+    url: "https://jundongl.github.io/scikit-feature/datasets/lymphoma.csv"
+    n_samples: 62
+    n_features: 4026
+    n_classes: 3
+    
+  dlbcl:
+    file_name: "dlbcl.csv"
+    url: "https://jundongl.github.io/scikit-feature/datasets/dlbcl.csv"
+    n_samples: 77
+    n_features: 5469
+    n_classes: 2
+    
+  brain:
+    file_name: "brain.csv"
+    url: "https://jundongl.github.io/scikit-feature/datasets/brain.csv"
+    n_samples: 42
+    n_features: 5597
+    n_classes: 5
+    
+  11tumors:
+    file_name: "11tumors.csv"
+    url: "https://jundongl.github.io/scikit-feature/datasets/11_Tumors.csv"
+    n_samples: 174
+    n_features: 12533
+    n_classes: 11
+
+# Evaluation Metrics
+metrics:
+  classification: ["accuracy", "precision", "recall", "f1", "roc_auc"]
+  feature_selection: ["jaccard_stability", "feature_overlap"]
+  
+  # Thresholds for statistical significance
+  significance_level: 0.05
+  confidence_interval: 0.95
+
+# Output Settings
+output:
+  save_results: True
+  save_models: False              # Save trained models (can be large)
+  save_predictions: True
+  save_feature_importance: True
+  save_plots: True
+  
+  # Plot settings
+  plots:
+    format: "png"                 # "png", "pdf", "svg"
+    dpi: 300
+    style: "seaborn-v0_8-whitegrid"
+    colormap: "viridis"
+    
+  # Report generation
+  generate_report: True
+  report_format: ["html", "pdf"]  # "html", "pdf", "latex"
+
+# Parallel Processing
+parallel:
+  enabled: True
+  n_jobs: 4                       # Number of parallel jobs (-1 for all cores)
+  backend: "loky"                 # "loky", "multiprocessing", "threading"
+
+# Logging
+logging:
+  level: "INFO"                   # "DEBUG", "INFO", "WARNING", "ERROR"
+  file: "experiments/experiment.log"
+  console: True
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
