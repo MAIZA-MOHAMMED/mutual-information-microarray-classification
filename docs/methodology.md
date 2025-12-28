@@ -1,4 +1,4 @@
-# Methodology: Mutual Information Feature Selection for Microarray Classification
+# Methodology : Mutual Information Feature Selection for Microarray Classification
 
 ## Overview
 
@@ -70,4 +70,5 @@ We analyzed nine publicly available microarray datasets:
 
 5. Label Encoding
    - Binary encoding for cancer/normal
+
    - Multi-class encoding for cancer subtypes
