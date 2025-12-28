@@ -1,4 +1,4 @@
-# 🧬 Mutual Information Microarray Classification
+# 🧬 Mutual Information Outperforms Competing Feature Selection Methods for High-Dimensional Microarray Data Classification
 
 A comprehensive framework for feature selection and classification of microarray gene expression data using mutual information-based methods.
 
