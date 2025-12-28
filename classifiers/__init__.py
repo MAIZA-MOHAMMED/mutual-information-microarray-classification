@@ -1,33 +1,26 @@
 """
-Feature selection module for microarray data analysis.
+Classifier implementations for microarray data analysis.
 
-This module implements three mutual information-based feature selection methods:
-1. MIM (Mutual Information Maximization)
-2. JMI (Joint Mutual Information)
-3. MRMR (Max-Relevance Min-Redundancy)
+This module provides optimized implementations of four classifiers:
+1. Neural Networks (NN)
+2. XGBoost (XGB)
+3. Support Vector Machines (SVM)
+4. Random Forest (RF)
 
-These methods are designed for high-dimensional data where features >> samples.
+All classifiers are optimized with hyperparameters as specified in the paper.
 """
 
-from .mim import MutualInformationMaximization
-from .jmi import JointMutualInformationSelector
-from .mrmr import MaxRelevanceMinRedundancy
-from .utils import (
-    estimate_mutual_information,
-    mutual_info_matrix,
-    normalize_mi_scores,
-    select_top_features
-)
+from .neural_network import MicroarrayNeuralNetwork
+from .xgboost_model import XGBoostClassifier
+from .svm_model import SVMClassifier
+from .random_forest import RandomForestClassifier
 
 __version__ = "1.0.0"
 __author__ = "Based on Cherif et al., 2022"
 
 __all__ = [
-    "MutualInformationMaximization",
-    "JointMutualInformationSelector",
-    "MaxRelevanceMinRedundancy",
-    "estimate_mutual_information",
-    "mutual_info_matrix",
-    "normalize_mi_scores",
-    "select_top_features"
+    "MicroarrayNeuralNetwork",
+    "XGBoostClassifier", 
+    "SVMClassifier",
+    "RandomForestClassifier"
 ]
