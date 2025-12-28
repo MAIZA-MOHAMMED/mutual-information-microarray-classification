@@ -1,0 +1,156 @@
+{
+  "leukemia": {
+    "full_name": "Leukemia Dataset",
+    "paper": "Golub et al., 1999",
+    "citation": "Golub, T. R., Slonim, D. K., Tamayo, P., Huard, C., Gaasenbeek, M., Mesirov, J. P., ... & Lander, E. S. (1999). Molecular classification of cancer: class discovery and class prediction by gene expression monitoring. Science, 286(5439), 531-537.",
+    "n_genes": 7129,
+    "n_samples": 72,
+    "n_classes": 2,
+    "classes": ["ALL", "AML"],
+    "class_distribution": [47, 25],
+    "source": "https://web.stanford.edu/~hastie/CASI_files/DATA/leukemia.csv",
+    "notes": "Original study: 72 bone marrow samples (47 ALL, 25 AML)"
+  },
+  
+  "brain_cancer": {
+    "full_name": "Brain Cancer Dataset",
+    "paper": "Nutt et al., 2003",
+    "citation": "Nutt, C. L., Mani, D. R., Betensky, R. A., Tamayo, P., Cairncross, J. G., Ladd, C., ... & Louis, D. N. (2003). Gene expression-based classification of malignant gliomas correlates better with survival than histological classification. Cancer research, 63(7), 1602-1607.",
+    "n_genes": 10367,
+    "n_samples": 90,
+    "n_classes": 2,
+    "classes": ["Classical", "Mesenchymal"],
+    "class_distribution": [50, 40],
+    "source": "GEO GSE4412",
+    "notes": "50 training samples (27/11 split), 30 testing samples (20/14 split)"
+  },
+  
+  "colon_cancer": {
+    "full_name": "Colon Cancer Dataset",
+    "paper": "Alon et al., 1999",
+    "citation": "Alon, U., Barkai, N., Notterman, D. A., Gish, K., Ybarra, S., Mack, D., & Levine, A. J. (1999). Broad patterns of gene expression revealed by clustering analysis of tumor and normal colon tissues probed by oligonucleotide arrays. Proceedings of the National Academy of Sciences, 96(12), 6745-6750.",
+    "n_genes": 2000,
+    "n_samples": 62,
+    "n_classes": 2,
+    "classes": ["Tumor", "Normal"],
+    "class_distribution": [40, 22],
+    "source": "https://github.com/jundongl/scikit-feature/raw/master/skfeature/data/colon.mat",
+    "notes": "40 tumor tissues, 22 normal tissues"
+  },
+  
+  "srbct": {
+    "full_name": "Small Round Blue Cell Tumors Dataset",
+    "paper": "Khan et al., 2001",
+    "citation": "Khan, J., Wei, J. S., Ringnér, M., Saal, L. H., Ladanyi, M., Westermann, F., ... & Meltzer, P. S. (2001). Classification and diagnostic prediction of cancers using gene expression profiling and artificial neural networks. Nature medicine, 7(6), 673-679.",
+    "n_genes": 2308,
+    "n_samples": 83,
+    "n_classes": 4,
+    "classes": ["EWS", "BL", "NB", "RMS"],
+    "class_distribution": [29, 11, 18, 25],
+    "source": "https://github.com/jundongl/scikit-feature/raw/master/skfeature/data/SRBCT.mat",
+    "notes": "Four childhood malignancies: Ewing sarcoma, Burkitt lymphoma, neuroblastoma, rhabdomyosarcoma"
+  },
+  
+  "prostate_tumor": {
+    "full_name": "Prostate Tumor Dataset",
+    "paper": "Singh et al., 2002",
+    "citation": "Singh, D., Febbo, P. G., Ross, K., Jackson, D. G., Manola, J., Ladd, C., ... & Sellers, W. R. (2002). Gene expression correlates of clinical prostate cancer behavior. Cancer cell, 1(2), 203-209.",
+    "n_genes": 12600,
+    "n_samples": 102,
+    "n_classes": 2,
+    "classes": ["Tumor", "Normal"],
+    "class_distribution": [52, 50],
+    "source": "GEO GSE6919",
+    "notes": "52 tumor samples, 50 normal samples"
+  },
+  
+  "lung_cancer": {
+    "full_name": "Lung Cancer Dataset",
+    "paper": "Bhattacharjee et al., 2001",
+    "citation": "Bhattacharjee, A., Richards, W. G., Staunton, J., Li, C., Monti, S., Vasa, P., ... & Meyerson, M. (2001). Classification of human lung carcinomas by mRNA expression profiling reveals distinct adenocarcinoma subclasses. Proceedings of the National Academy of Sciences, 98(24), 13790-13795.",
+    "n_genes": 12533,
+    "n_samples": 203,
+    "n_classes": 5,
+    "classes": ["ADENO", "SQUAMOUS", "SMALL_CELL", "NORMAL", "COID"],
+    "class_distribution": [139, 21, 6, 17, 20],
+    "source": "GEO GSE1987",
+    "notes": "203 lung tissue samples, 5 classes"
+  },
+  
+  "lymphoma": {
+    "full_name": "Lymphoma Dataset",
+    "paper": "Alizadeh et al., 2000",
+    "citation": "Alizadeh, A. A., Eisen, M. B., Davis, R. E., Ma, C., Lossos, I. S., Rosenwald, A., ... & Staudt, L. M. (2000). Distinct types of diffuse large B-cell lymphoma identified by gene expression profiling. Nature, 403(6769), 503-511.",
+    "n_genes": 4026,
+    "n_samples": 96,
+    "n_classes": 2,
+    "classes": ["DLBCL", "FL"],
+    "class_distribution": [58, 19],
+    "source": "https://github.com/jundongl/scikit-feature/raw/master/skfeature/data/lymphoma.mat",
+    "notes": "Diffuse large B-cell lymphoma (58) vs follicular lymphoma (19)"
+  },
+  
+  "11_tumors": {
+    "full_name": "11 Tumors Dataset",
+    "paper": "Ramaswamy et al., 2001",
+    "citation": "Ramaswamy, S., Tamayo, P., Rifkin, R., Mukherjee, S., Yeang, C. H., Angelo, M., ... & Golub, T. R. (2001). Multiclass cancer diagnosis using tumor gene expression signatures. Proceedings of the National Academy of Sciences, 98(26), 15149-15154.",
+    "n_genes": 4200,
+    "n_samples": 174,
+    "n_classes": 11,
+    "classes": ["BREAST", "PROSTATE", "LUNG", "COLON", "LYMPHOMA", "BLADDER", "MELANOMA", "UTERUS", "LEUKEMIA", "RENAL", "PANCREAS"],
+    "class_distribution": [26, 26, 27, 23, 22, 8, 8, 7, 6, 11, 10],
+    "source": "Broad Institute",
+    "notes": "Multi-class problem with 11 different tumor types"
+  },
+  
+  "dlbcl": {
+    "full_name": "Diffuse Large B-Cell Lymphoma Dataset",
+    "paper": "Shipp et al., 2002",
+    "citation": "Shipp, M. A., Ross, K. N., Tamayo, P., Weng, A. P., Kutok, J. L., Aguiar, R. C., ... & Golub, T. R. (2002). Diffuse large B-cell lymphoma outcome prediction by gene-expression profiling and supervised machine learning. Nature medicine, 8(1), 68-74.",
+    "n_genes": 3812,
+    "n_samples": 42,
+    "n_classes": 2,
+    "classes": ["Cured", "Fatal"],
+    "class_distribution": [24, 18],
+    "source": "https://github.com/jundongl/scikit-feature/raw/master/skfeature/data/dlbcl.mat",
+    "notes": "Patient outcome prediction: cured vs fatal"
+  },
+  
+  "experiment_config": {
+    "cross_validation": {
+      "n_folds": 5,
+      "random_state": 42,
+      "stratified": true
+    },
+    "train_test_split": {
+      "test_size": 0.2,
+      "random_state": 42,
+      "stratify": true
+    },
+    "feature_selection": {
+      "default_n_features": 100,
+      "methods": ["mim", "jmi", "mrmr"]
+    },
+    "classifiers": {
+      "neural_network": {
+        "default_layers": 2,
+        "default_neurons": 64,
+        "default_dropout": 0.3,
+        "default_learning_rate": 0.001
+      },
+      "xgboost": {
+        "default_n_estimators": 300,
+        "default_max_depth": 6,
+        "default_learning_rate": 0.05
+      },
+      "svm": {
+        "default_C": 1.0,
+        "default_kernel": "rbf"
+      },
+      "random_forest": {
+        "default_n_estimators": 500,
+        "default_max_depth": 20
+      }
+    }
+  }
+}
