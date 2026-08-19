@@ -77,7 +77,8 @@ Nine publicly available microarray datasets from Gene Expression Omnibus (GEO):
 | DLBCL | 3,812 | 42 | — | 2 | GSE905 |
 
 ---
-📋 Overview
+**📋 Overview**
+
 This repository implements and compares mutual information-based feature selection methods for microarray data classification:
 MIM (Mutual Information Maximization)
 JMI (Joint Mutual Information)
@@ -88,7 +89,7 @@ XGBoost
 Support Vector Machines
 Random Forest
 
-🚀 Quick Start Installation
+**🚀 Quick Start Installation**
 ```bash
 # Clone repository
 git clone https://github.com/MAIZA-MOHAMMED/mutual-information-microarray-classification.git
