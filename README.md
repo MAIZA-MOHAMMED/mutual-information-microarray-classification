@@ -4,7 +4,7 @@
 [![Scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)](https://scikit-learn.org/stable/)
 [![XGBoost](https://img.shields.io/badge/XGBoost-1.5+-brightgreen.svg)](https://xgboost.readthedocs.io/)
 
-🧬 Mutual Information Outperforms Competing Feature Selection Methods for High-Dimensional Microarray Data Classification
+🧬 **Mutual Information Outperforms Competing Feature Selection Methods for High-Dimensional Microarray Data Classification**
 
 A comprehensive framework for feature selection and classification of microarray gene expression data using mutual information-based methods.
 
