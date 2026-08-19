@@ -25,7 +25,7 @@ This paper introduces a novel and efficient framework for cancer classification 
 | Feature | Description |
 |---------|-------------|
 | 🔬 **Advanced Feature Selection** | Implements three MI-based methods (MIM, JMI, MRMR) for high-dimensional gene selection |
-| 🤖 **Multiple Classifiers** | Supports Random Forest (RF), XGBoost (XGB), Neural Networks (NN), and Support Vector Machines (SVM) |
+| 🤖 **Multiple Classifiers** | Random Forest (RF), XGBoost (XGB), Neural Networks (NN), and Support Vector Machines (SVM) |
 | 📊 **Nine Cancer Datasets** | Comprehensive evaluation across diverse microarray datasets from GEO |
 | ⚡ **Computational Efficiency** | Reduces model training time by 40-60% and model size by 70-90% |
 | 🧬 **Biological Validation** | Identifies well-established cancer biomarkers (TP53, MYC, CDKN1A, EGR1) |
