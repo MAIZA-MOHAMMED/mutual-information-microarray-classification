@@ -4,9 +4,9 @@
 [![Scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)](https://scikit-learn.org/stable/)
 [![XGBoost](https://img.shields.io/badge/XGBoost-1.5+-brightgreen.svg)](https://xgboost.readthedocs.io/)
 
-# Mutual Information Outperforms Competing Feature Selection Methods for High-Dimensional Microarray Data Classification
+🧬 Mutual Information Outperforms Competing Feature Selection Methods for High-Dimensional Microarray Data Classification
 
-**MI-Microarray-Classification** is a robust and computationally efficient framework for cancer classification using microarray gene expression data. This repository contains the official implementation of our paper.
+A comprehensive framework for feature selection and classification of microarray gene expression data using mutual information-based methods.
 
 👥 **Authors**: Mohammed MAIZA, Chahira CHERIF, Samira CHOURAQUI, Abdelmalik TALEB-AHMED
 
@@ -77,48 +77,31 @@ Nine publicly available microarray datasets from Gene Expression Omnibus (GEO):
 | DLBCL | 3,812 | 42 | — | 2 | GSE905 |
 
 ---
+📋 Overview
+This repository implements and compares mutual information-based feature selection methods for microarray data classification:
+MIM (Mutual Information Maximization)
+JMI (Joint Mutual Information)
+MRMR (Max-Relevance Min-Redundancy)
+Applied with multiple classifiers:
+Neural Networks (best performer)
+XGBoost
+Support Vector Machines
+Random Forest
+🚀 Quick Start
+Installation
+```bash
+# Clone repository
+git clone https://github.com/MAIZA-MOHAMMED/mutual-information-microarray-classification.git
+cd mutual-information-microarray-classification
 
-## 🏗️ Framework Architecture
-┌─────────────────────────────────────────────────────────────────────────┐
-│ Microarray Gene Expression Data │
-│ (p >> n problem) │
-│ High-dimensional, low-sample │
-└────────────────────────────┬────────────────────────────────────────────┘
-▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│ Preprocessing Pipeline │
-│ RMA Normalization → Log2 Transformation │
-│ → k-NN Imputation │
-└────────────────────────────┬────────────────────────────────────────────┘
-▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│ MI-Based Feature Selection (Algorithm 1) │
-├──────────────────┬───────────────────────┬─────────────────────────────┤
-│ MIM │ JMI │ MRMR │
-│ (Individual │ (Joint Mutual │ (Max-Relevance │
-│ Relevance) │ Information) │ Min-Redundancy) │
-│ │ │ │
-│ Selects top k │ Maximizes joint MI │ Balances relevance │
-│ features with │ of feature subset │ and redundancy among │
-│ highest MI to │ and target; captures │ selected features │
-│ target │ feature interactions │ │
-└──────────────────┴───────────────────────┴─────────────────────────────┘
-▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│ Classifier Evaluation │
-├───────────────┬─────────────┬─────────────────┬─────────────────────────┤
-│ RF │ XGB │ NN │ SVM │
-│ (Ensemble │ (Gradient │ (MLP with │ (Maximum Margin │
-│ Trees) │ Boosting) │ Dropout) │ Classifier) │
-│ │ │ │ │
-│ 100-500 trees │ lr: 0.01- │ 1-3 hidden │ C: 0.1-10 │
-│ depth: 10-30 │ 0.3, depth: │ layers, │ gamma: 0.001-0.1 │
-│ │ 3-10 │ 32-128 neurons │ │
-└───────────────┴─────────────┴─────────────────┴─────────────────────────┘
-▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│ Performance Metrics │
-│ Accuracy → Precision → Recall → F1-Score → p-value │
-│ │
-│ Statistical Significance (paired t-test) │
-└─────────────────────────────────────────────────────────────────────────┘
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Download datasets
+cd data
+python download_datasets.py
+
