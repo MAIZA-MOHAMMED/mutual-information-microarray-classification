@@ -87,8 +87,8 @@ Neural Networks (best performer)
 XGBoost
 Support Vector Machines
 Random Forest
-🚀 Quick Start
-Installation
+
+🚀 Quick Start Installation
 ```bash
 # Clone repository
 git clone https://github.com/MAIZA-MOHAMMED/mutual-information-microarray-classification.git
