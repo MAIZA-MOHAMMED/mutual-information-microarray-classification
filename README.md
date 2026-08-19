@@ -1,7 +1,10 @@
 # 🧬 Mutual Information Outperforms Competing Feature Selection Methods for High-Dimensional Microarray Data Classification
-👥 **Authors**: Mohammed MAIZA, Chahira CHERIF, Samira CHOURAQUI, Abdelmalik TALEB-AHMED
 
 A comprehensive framework for feature selection and classification of microarray gene expression data using mutual information-based methods.
+
+👥 **Authors**: Mohammed MAIZA, Chahira CHERIF, Samira CHOURAQUI, Abdelmalik TALEB-AHMED
+
+
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
